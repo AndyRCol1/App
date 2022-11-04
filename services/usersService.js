@@ -18,11 +18,13 @@ generate(){
             price: parseInt(faker.commerce.price(),10),
             Image: faker.image.imageUrl(),
             isBlock: faker.datatype.boolean(),
-
+            
         })
     }
+    // console.log(this.users);
 
 }
+
 async Create(data){
     const newUser = {
         id: faker.datatype.uuid(),
@@ -31,7 +33,8 @@ async Create(data){
     this.users.push(newUser);
     return newUser;
 }
-async find(){
+find(){
+    console.log('aqui voy')
     return new Promise((resolve, reject) =>{
         setTimeout(() => {
             resolve(this.users)
